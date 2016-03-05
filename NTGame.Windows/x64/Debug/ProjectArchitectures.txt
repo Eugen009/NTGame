@@ -1,0 +1,1 @@
+D:\dev\NTGame\NTGame\NTGame.Windows\NTGame.Windows.vcxproj;x64

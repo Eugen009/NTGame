@@ -1,0 +1,25 @@
+﻿Build started 2015/3/17 1:42:18.
+     1>Project "D:\dev\NTGame\NTGame\NTGame.WindowsPhone\NTGame.WindowsPhone.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\dev\VC\bin\CL.exe /c /ID:\dev\NTGame\NTGame\NTGame.WindowsPhone\ /I"Generated Files\\" /IDebug\ /ID:\dev\NTGame\NTGame\NTGame.Shared\ /ZI /ZW /ZW:nostdlib /nologo /W3 /WX- /sdl /MP /Od /Oy- /D PSAPI_VERSION=2 /D WINAPI_FAMILY=WINAPI_FAMILY_PHONE_APP /D _UITHREADCTXT_SUPPORT=0 /D _UNICODE /D UNICODE /D _DEBUG /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"Debug\NTGame.WindowsPhone.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /FU"C:\Program Files (x86)\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\References\CommonConfiguration\neutral\platform.winmd" /FU"C:\Program Files (x86)\Windows Phone Kits\8.1\\References\CommonConfiguration\Neutral\Windows.winmd" /FU"C:\Program Files (x86)\Windows Phone Kits\8.1\\References\CommonConfiguration\Neutral\Windows.winmd" /analyze- /errorReport:prompt D:\dev\NTGame\NTGame\NTGame.Shared\Content\Sample3DSceneRenderer.cpp D:\dev\NTGame\NTGame\NTGame.Shared\EObjResource.cpp D:\dev\NTGame\NTGame\NTGame.Shared\ERender.cpp D:\dev\NTGame\NTGame\NTGame.Shared\NTGameMain.cpp D:\dev\NTGame\NTGame\NTGame.Shared\app.cpp
+         Sample3DSceneRenderer.cpp
+         EObjResource.cpp
+         ERender.cpp
+         NTGameMain.cpp
+         app.cpp
+       Link:
+         D:\dev\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\dev\NTGame\Debug\NTGame.WindowsPhone\NTGame.WindowsPhone.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Windows Phone Kits\8.1\\lib\x86" WindowsPhoneCore.lib RuntimeObject.lib PhoneAppModelHost.lib DXGI.lib D3D11.lib D2D1.lib DWrite.lib WindowsPhoneCore.lib RuntimeObject.lib PhoneAppModelHost.lib /NODEFAULTLIB:kernel32.lib /NODEFAULTLIB:ole32.lib /MANIFEST:NO /DEBUG /PDB:"D:\dev\NTGame\Debug\NTGame.WindowsPhone\NTGame.WindowsPhone.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /APPCONTAINER /WINMD:NO /WINMDFILE:"D:\dev\NTGame\Debug\NTGame.WindowsPhone\NTGame.winmd" /DYNAMICBASE /NXCOMPAT /MACHINE:X86 Debug\EObjResource.obj
+         Debug\ERender.obj
+         Debug\ESubStr.obj
+         Debug\app.obj
+         Debug\NTGameMain.obj
+         Debug\pch.obj
+         Debug\DeviceResources.obj
+         Debug\SampleFpsTextRenderer.obj
+         Debug\Sample3DSceneRenderer.obj
+         NTGame.WindowsPhone.vcxproj -> D:\dev\NTGame\Debug\NTGame.WindowsPhone\NTGame.WindowsPhone.exe
+     1>Done Building Project "D:\dev\NTGame\NTGame\NTGame.WindowsPhone\NTGame.WindowsPhone.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.16

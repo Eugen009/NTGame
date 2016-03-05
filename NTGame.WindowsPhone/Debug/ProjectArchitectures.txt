@@ -1,0 +1,1 @@
+D:\dev\NTGame\NTGame\NTGame.WindowsPhone\NTGame.WindowsPhone.vcxproj;x86

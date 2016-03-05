@@ -1,0 +1,44 @@
+﻿Build started 2015/3/18 1:14:59.
+     1>Project "D:\dev\NTGame\NTGame\NTGame.Windows\NTGame.Windows.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         D:\dev\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\dev\NTGame\Debug\NTGame.Windows\NTGame.Windows.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\dev\VC\\lib\store /LIBPATH:D:\dev\VC\\lib /LIBPATH:"D:\software\Autodesk\FBX\FBX SDK\2015.1\lib\vs2013\x86\debug" d2d1.lib d3d11.lib dxgi.lib ole32.lib windowscodecs.lib dwrite.lib "libfbxsdk-md.lib" kernel32.lib /MANIFEST:NO /DEBUG /PDB:"D:\dev\NTGame\Debug\NTGame.Windows\NTGame.Windows.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /APPCONTAINER /WINMD /WINMDFILE:"D:\dev\NTGame\Debug\NTGame.Windows\NTGame.winmd" /DYNAMICBASE /NXCOMPAT /MACHINE:X86 Debug\EObjResource.obj
+         Debug\ERender.obj
+         Debug\EFbxObj.obj
+         Debug\ESubStr.obj
+         Debug\app.obj
+         Debug\NTGameMain.obj
+         Debug\pch.obj
+         Debug\DeviceResources.obj
+         Debug\SampleFpsTextRenderer.obj
+         Debug\Sample3DSceneRenderer.obj
+     1>libfbxsdk-md.lib(fbxdebug.obj) : error LNK2019: unresolved external symbol __imp___getpid referenced in function "void __cdecl fbxsdk_2015_1::_FbxTrace(char const *,...)" (?_FbxTrace@fbxsdk_2015_1@@YAXPBDZZ)
+     1>libfbxsdk-md.lib(fbxprocessorshaderdependency.obj) : error LNK2001: unresolved external symbol __imp___getpid
+     1>libfbxsdk-md.lib(iff_tmpname.obj) : error LNK2001: unresolved external symbol __imp___getpid
+     1>libfbxsdk-md.lib(fbxutils.obj) : error LNK2019: unresolved external symbol __imp__getenv_s referenced in function "class fbxsdk_2015_1::FbxString __cdecl fbxsdk_2015_1::FbxGetEnv(char const *)" (?FbxGetEnv@fbxsdk_2015_1@@YA?AVFbxString@1@PBD@Z)
+     1>libfbxsdk-md.lib(fbxutils.obj) : error LNK2019: unresolved external symbol __imp___dupenv_s referenced in function "class fbxsdk_2015_1::FbxString __cdecl fbxsdk_2015_1::FbxGetEnv(char const *)" (?FbxGetEnv@fbxsdk_2015_1@@YA?AVFbxString@1@PBD@Z)
+     1>libfbxsdk-md.lib(fbxutils.obj) : error LNK2019: unresolved external symbol __imp___wgetcwd referenced in function "public: static bool __cdecl fbxsdk_2015_1::FbxPathUtils::Create(char const *)" (?Create@FbxPathUtils@fbxsdk_2015_1@@SA_NPBD@Z)
+     1>libfbxsdk-md.lib(awOSFilename.obj) : error LNK2001: unresolved external symbol __imp___wgetcwd
+     1>libfbxsdk-md.lib(fbxutils.obj) : error LNK2019: unresolved external symbol __imp___wchdir referenced in function "public: static bool __cdecl fbxsdk_2015_1::FbxPathUtils::Create(char const *)" (?Create@FbxPathUtils@fbxsdk_2015_1@@SA_NPBD@Z)
+     1>libfbxsdk-md.lib(fbxutils.obj) : error LNK2019: unresolved external symbol __imp___getcwd referenced in function "public: static class fbxsdk_2015_1::FbxString __cdecl fbxsdk_2015_1::FbxPathUtils::Resolve(char const *)" (?Resolve@FbxPathUtils@fbxsdk_2015_1@@SA?AVFbxString@2@PBD@Z)
+     1>libfbxsdk-md.lib(xmlIO.obj) : error LNK2001: unresolved external symbol __imp___getcwd
+     1>libfbxsdk-md.lib(H5system.obj) : error LNK2001: unresolved external symbol __imp___getcwd
+     1>libfbxsdk-md.lib(fbxutils.obj) : error LNK2019: unresolved external symbol __imp___chdrive referenced in function "public: static bool __cdecl fbxsdk_2015_1::FbxPathUtils::Create(char const *)" (?Create@FbxPathUtils@fbxsdk_2015_1@@SA_NPBD@Z)
+     1>libfbxsdk-md.lib(iff_findfile.obj) : error LNK2001: unresolved external symbol __imp__getenv
+     1>libfbxsdk-md.lib(iff_exec.obj) : error LNK2001: unresolved external symbol __imp__getenv
+     1>libfbxsdk-md.lib(iff_flpath.obj) : error LNK2001: unresolved external symbol __imp__getenv
+     1>libfbxsdk-md.lib(iff_work.obj) : error LNK2001: unresolved external symbol __imp__getenv
+     1>libfbxsdk-md.lib(H5.obj) : error LNK2019: unresolved external symbol __imp__getenv referenced in function _H5check_version
+     1>libfbxsdk-md.lib(H5PL.obj) : error LNK2001: unresolved external symbol __imp__getenv
+     1>libfbxsdk-md.lib(H5Lexternal.obj) : error LNK2001: unresolved external symbol __imp__getenv
+     1>libfbxsdk-md.lib(iff_tmpname.obj) : error LNK2001: unresolved external symbol __imp__getenv
+     1>libfbxsdk-md.lib(H5system.obj) : error LNK2019: unresolved external symbol __imp___getdcwd referenced in function _H5_build_extpath
+     1>libfbxsdk-md.lib(H5system.obj) : error LNK2019: unresolved external symbol __imp___getdrive referenced in function _H5_build_extpath
+     1>libfbxsdk-md.lib(iff_work.obj) : error LNK2019: unresolved external symbol __imp__putenv referenced in function "void __cdecl fbxsdk_2015_1::FLsetwork(char const *,char const *)" (?FLsetwork@fbxsdk_2015_1@@YAXPBD0@Z)
+     1>OLDNAMES.lib(putenv.obi) : error LNK2001: unresolved external symbol __imp__putenv
+     1>OLDNAMES.lib(putenv.obi) : error LNK2001: unresolved external symbol __imp___putenv
+     1>D:\dev\NTGame\Debug\NTGame.Windows\NTGame.Windows.exe : fatal error LNK1120: 12 unresolved externals
+     1>Done Building Project "D:\dev\NTGame\NTGame\NTGame.Windows\NTGame.Windows.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.82

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{d1bfd429-22b3-4326-be36-7698504a15d0}</ItemsProjectGuid>
+    <ItemsRootNamespace>NTGame</ItemsRootNamespace>
+    <ItemsProjectName>NTGame.Shared</ItemsProjectName>
+    <SharedGUID>18632a97-804c-4991-914c-234b5fa83b25</SharedGUID>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)EObjResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\EFbxObj.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ESubStr.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)app.h" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)app.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)EObjResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\EFbxObj.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ESubStr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)NTGameMain.h" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)NTGameMain.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Common\DeviceResources.h" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Common\DeviceResources.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Common\DirectXHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Common\StepTimer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Content\SampleFpsTextRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Content\Sample3DSceneRenderer.h" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Content\SampleFpsTextRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Content\Sample3DSceneRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Content\SamplePixelShader.hlsl">
+      <ShaderType>Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Content\SampleVertexShader.hlsl">
+      <ShaderType>Vertex</ShaderType>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+</Project>

@@ -41,6 +41,12 @@ namespace EResource{
 		m_bFinish = false;
 	}
 
+	EObjResource::EObjResource(){
+		//this->m_filename = filename;// ref new String("");
+		m_file = nullptr;
+		m_bFinish = false;
+	};
+
 	EObjResource::~EObjResource()
 	{
 	}
@@ -73,7 +79,8 @@ namespace EResource{
 							DataReader^ dataReader = DataReader::FromBuffer(buffer);
 							String^ fileContent = dataReader->ReadString(buffer->Length);
 							if (fileContent != nullptr){
-								this->parse(fileContent);
+								std::shared_ptr<std::wstring> str( new std::wstring(fileContent->Data()));
+								this->parse(str);
 								//OutputDebugString(fileContent->Data());
 								//OutputDebugString(this->toString().c_str());
 							}
@@ -128,6 +135,7 @@ namespace EResource{
 		this ->m_normals.push_back( DirectX::XMFLOAT3( normal ) );
 	}
 
+#if 0
 	void EObjResource::createFace(const ESubStr& strbuf){
 		if (m_meshes.empty()){
 			m_meshes.push_back(ObjMesh());
@@ -141,14 +149,11 @@ namespace EResource{
 		while (nextIndex > startIndex  && i < 4){
 			ESubStr temp = strbuf.subStr(startIndex, nextIndex);
 			//创建顶点
-			//ObjVec vec;
-			//vec.init();
 			int vIndex = 0;
 			temp.toInt( vIndex );
 
-			//vec.pos = this->m_vexes[vIndex-1];
-			ObjVec& vec = this->m_vexes[vIndex - 1];
-			//startIndex = strbuf.findFirstNotOf(BLANK_LETTERS, nextIndex);
+			vIndex--;
+			ObjVec& vec = this->m_vexes[vIndex];
 
 			// uv index
 			if (strbuf[startIndex] == L'/') {
@@ -162,18 +167,13 @@ namespace EResource{
 				tt--;
 				vec.normal = this->m_normals[tt];
 			}
-			//int fIndex = cur.vertexes.size();
-			faces[i++] = vIndex; // fIndex;
-			//cur.vertexes.push_back(vec);
+			faces[i++] = vIndex;
 			
 			
 			nextIndex++;
 			if (nextIndex > strbuf.getLen()) break;
 			startIndex = nextIndex;
 			nextIndex = strbuf.findFirstOf(BLANK_LETTERS, startIndex);
-			//startIndex = nextIndex + 1;
-			//if (startIndex > strbuf.getLen()) break;
-			//nextIndex = strbuf.findFirstOf(BLANK_LETTERS, startIndex);
 			if (nextIndex > strbuf.getLen()) break;
 		}
 		cur.addFace(faces[2], faces[1], faces[0]);
@@ -181,7 +181,67 @@ namespace EResource{
 		if ( i > 2 ) 
 			cur.addFace(faces[0], faces[3], faces[2]);
 	}
+#else
+	void EObjResource::createFace(const ESubStr& strbuf){
+		if (m_meshes.empty()){
+			m_meshes.push_back(ObjMesh());
+		}
+		ObjMesh& cur = m_meshes[m_meshes.size() - 1];
+		unsigned startIndex = 0;
+		unsigned nextIndex = strbuf.findFirstNotOf(L"1234567890");
+		unsigned i = 0;
+		int faces[4];
+		memset(faces, 0, sizeof(int) * 4);
+		while (nextIndex > startIndex  && i < 4){
+			ESubStr temp = strbuf.subStr(startIndex, nextIndex);
+			//创建顶点
+			ObjVec vec;
+			vec.init();
+			int vIndex = 0;
+			temp.toInt(vIndex);
 
+			vec.pos = this->m_vexes[vIndex-1].pos;
+			vIndex--;
+			//ObjVec& vec = this->m_vexes[vIndex];
+			//startIndex = strbuf.findFirstNotOf(BLANK_LETTERS, nextIndex);
+
+			// uv index
+			if (nextIndex < strbuf.getLen()) {
+				if (strbuf[nextIndex] == L'/') {
+					int tt = strbuf.getIntFrom(nextIndex + 1, nextIndex);
+					tt--;
+					vec.uv = this->m_uvs[tt];
+				}
+				if (nextIndex < strbuf.getLen()){
+					// normal index 
+					if (strbuf[nextIndex] == L'/') {
+						int tt = strbuf.getIntFrom(nextIndex + 1, nextIndex);
+						tt--;
+						vec.normal = this->m_normals[tt];
+					}
+				}
+			}
+
+			int fIndex = (int)cur.vertexes.size();
+			faces[i++] = fIndex;
+			cur.vertexes.push_back(vec);
+
+			nextIndex++;
+			if (nextIndex > strbuf.getLen()) break;
+			startIndex = nextIndex;
+			nextIndex = strbuf.findFirstNotOf(BLANK_LETTERS, startIndex);
+			if (nextIndex > strbuf.getLen()) break;
+			startIndex = nextIndex;
+			nextIndex++;
+			nextIndex = strbuf.findFirstNotOf(L"1234567890", nextIndex);
+		}
+		cur.addFace(faces[2], faces[1], faces[0]);
+		//有可能只有三个顶点
+		if (i > 2)
+			cur.addFace(faces[0], faces[3], faces[2]);
+	}
+
+#endif
 	ESubStr EObjResource::getNextNotBlankStr(const ESubStr& str, unsigned from ){
 		if (from>str.getLen()) from = str.getLen();
 		int start = str.findFirstNotOf(BLANK_LETTERS, from);
@@ -224,8 +284,8 @@ namespace EResource{
 		
 	}
 
-	void EObjResource::parse(String^ str){
-		if (str == nullptr || str->IsEmpty()){
+	void EObjResource::parse(std::shared_ptr<std::wstring> str){
+		if (str == nullptr || str->empty()){
 			return;
 		}
 		ESubStr strbuf(str);
@@ -272,11 +332,11 @@ namespace EResource{
 		return strbuf.str();
 	}
 
-	const std::vector<ObjVec>& EObjResource::getAllVexes() const{
+	const std::vector<EMeshRes::ObjVec>& EObjResource::getAllVexes() const{
 		return m_vexes; 
 	}
 	
-	const std::vector<ObjMesh>& EObjResource::getAllMeshes() const{
+	const EMeshRes::MeshLst& EObjResource::getAllMeshes() const{
 		return m_meshes; 
 	}
 

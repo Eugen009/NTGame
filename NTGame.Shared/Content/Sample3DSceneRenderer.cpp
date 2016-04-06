@@ -176,6 +176,23 @@ void Sample3DSceneRenderer::Render()
 		0
 		);
 
+#ifndef _RENDER_TEX
+
+	context->PSSetShaderResources(
+		0,
+		1,
+		this->m_TexView.GetAddressOf() //textureView.GetAddressOf()
+		);
+
+	context->PSSetSamplers(
+		0,
+		1,
+		this->m_Sampler.GetAddressOf() //sampler.GetAddressOf()
+		);
+#endif
+
+
+
 	// Draw the objects.
 	context->DrawIndexed(
 		m_indexCount,

@@ -4,62 +4,31 @@ using namespace Windows::Storage;
 using namespace Platform;
 #include "ESubStr.h"
 #include <string>
+#include <Resource\EMeshRes.h>
+
 namespace EResource{
 
-	struct ObjVec{
-
-			DirectX::XMFLOAT3 pos;
-			DirectX::XMFLOAT3 color;
-			DirectX::XMFLOAT3 normal;
-			DirectX::XMFLOAT2 uv;
-
-			ObjVec(){}
-			void init(){
-				memset( this, 0, sizeof(ObjVec) );
-			}
-	};
-
-	struct FaceData{
-		int posId;
-		int uvId;
-		int normalId;
-	};
-
-	struct ObjMesh{
-		typedef unsigned short DATA_TYPE;
-		std::vector<DATA_TYPE> indexes;
-		//public std::vector<int> uvIndex;
-		//public std::vector<int> normalIndex;
-		
-		std::vector<ObjVec> vertexes;
-		void addFace(DATA_TYPE a, DATA_TYPE b, DATA_TYPE c){
-			indexes.push_back(a);
-			indexes.push_back(b);
-			indexes.push_back(c);
-		}
-
-		int getFaceCount() const{
-			return (int)indexes.size() / 3;
-		}
-	};
-
-	class EObjResource
+	class EObjResource:public EMeshRes
 	{
 	public:
-
+		virtual EResType GetResType() const{
+			return EResType::MESH;
+		}
 
 	public:
 		EObjResource(String^ filename);
+		EObjResource();
 		~EObjResource();
 
 		Concurrency::task<void> ReLoad();
 		bool IsFinish() const{ return m_bFinish; }
-		void parse(String^ str);
+		void parse(std::shared_ptr<std::wstring> str);
 		const std::vector<ObjVec>& getAllVexes() const;
 		const std::vector<ObjMesh>& getAllMeshes() const;
 		int getFaceCount() const;
 		std::wstring toString();
-		int getMeshCount() const{ return m_meshes.size(); }
+		virtual const std::vector<ObjMesh>* GetAllMesh() const{ return &m_meshes; };
+		int getMeshCount() const{ return (int)m_meshes.size(); }
 		const ObjMesh& getMeshAt(int index){ return this->m_meshes[index]; }
 
 	protected:
@@ -81,10 +50,13 @@ namespace EResource{
 		std::vector<ObjVec> m_vexes;
 		std::vector<DirectX::XMFLOAT2> m_uvs;
 		std::vector<DirectX::XMFLOAT3> m_normals;
+		
+		std::vector<ObjVec> vertexes;
 		std::vector<ObjMesh> m_meshes;
 
 		bool m_bFinish;
 	};
 
 }
+
 

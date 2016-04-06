@@ -1,14 +1,27 @@
-﻿Build started 2016/3/5 15:04:29.
+﻿Build started 2016/4/6 19:34:31.
      1>Project "D:\dev\NTGame\NTGame\NTGame.Windows\NTGame.Windows.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\dev\VC\bin\x86_amd64\CL.exe /c /ID:\dev\NTGame\NTGame\NTGame.Windows\ /Ix64\Debug\ /I"D:\software\Autodesk\FBX\FBX SDK\2015.1\include" /ID:\dev\NTGame\NTGame\NTGame.Windows\ /I"Generated Files\\" /Ix64\Debug\ /ID:\dev\NTGame\NTGame\NTGame.Shared\ /Zi /ZW /ZW:nostdlib /nologo /W3 /WX- /sdl /MP /Od /D _DEBUG /D FBXSDK_SHARED /D _UNICODE /D UNICODE /D _DEBUG /D WINAPI_FAMILY=WINAPI_FAMILY_APP /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"x64\Debug\pch.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /wd4453 /wd28204 /FU"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\References\CommonConfiguration\neutral\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral\Windows.winmd" /FU"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral\Windows.winmd" /errorReport:prompt /bigobj D:\dev\NTGame\NTGame\NTGame.Shared\EObjResource.cpp
-         EObjResource.cpp
-     1>d:\dev\ntgame\ntgame\ntgame.shared\EObjResource.h(62): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+         D:\dev\VC\bin\x86_amd64\CL.exe /c /ID:\dev\NTGame\NTGame\NTGame.Windows\ /Ix64\Debug\ /I"D:\software\Autodesk\FBX\FBX SDK\2015.1\include" /ID:\dev\NTGame\NTGame\NTGame.Windows\ /I"Generated Files\\" /Ix64\Debug\ /ID:\dev\NTGame\NTGame\NTGame.Shared\ /Zi /ZW /ZW:nostdlib /nologo /W3 /WX- /sdl /MP /Od /D _DEBUG /D FBXSDK_SHARED /D _UNICODE /D UNICODE /D _DEBUG /D WINAPI_FAMILY=WINAPI_FAMILY_APP /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"x64\Debug\pch.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /wd4453 /wd28204 /FU"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\References\CommonConfiguration\neutral\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral\Windows.winmd" /FU"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral\Windows.winmd" /errorReport:prompt /bigobj D:\dev\NTGame\NTGame\NTGame.Shared\ERender\EMesh.cpp
+         EMesh.cpp
+     1>d:\dev\ntgame\ntgame\ntgame.shared\ESubStr.h(31): warning C4267: 'return' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>d:\dev\ntgame\ntgame\ntgame.shared\ESubStr.h(34): warning C4267: 'return' : conversion from 'size_t' to 'const unsigned int', possible loss of data
+     1>d:\dev\ntgame\ntgame\ntgame.shared\ESubStr.h(35): warning C4267: 'return' : conversion from 'size_t' to 'const unsigned int', possible loss of data
+     1>d:\dev\ntgame\ntgame\ntgame.shared\ESubStr.h(133): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>d:\dev\ntgame\ntgame\ntgame.shared\ESubStr.h(156): warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>D:\dev\NTGame\NTGame\NTGame.Shared\ERender\EMesh.cpp(129): warning C4267: '=' : conversion from 'size_t' to 'UINT', possible loss of data
+     1>d:\dev\ntgame\ntgame\ntgame.shared\erender\emesh.cpp(86): warning C4715: 'EMesh::CheckLoaded' : not all control paths return a value
        Link:
          D:\dev\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\dev\NTGame\x64\Debug\NTGame.Windows\NTGame.Windows.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\dev\VC\\lib\store\amd64 /LIBPATH:D:\dev\VC\\lib\amd64 /LIBPATH:"D:\software\Autodesk\FBX\FBX SDK\2015.1\lib\vs2013\x64\Debug" d2d1.lib d3d11.lib dxgi.lib ole32.lib windowscodecs.lib dwrite.lib libfbxsdk.lib kernel32.lib /MANIFEST:NO /DEBUG /PDB:"D:\dev\NTGame\x64\Debug\NTGame.Windows\NTGame.Windows.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /APPCONTAINER /WINMD /WINMDFILE:"D:\dev\NTGame\x64\Debug\NTGame.Windows\NTGame.winmd" /DYNAMICBASE /NXCOMPAT /MACHINE:X64 x64\Debug\EObjResource.obj
          x64\Debug\ERender.obj
          x64\Debug\EFbxObj.obj
+         x64\Debug\EMaterial.obj
+         x64\Debug\EMesh.obj
          x64\Debug\ESubStr.obj
+         x64\Debug\DDSLoader.obj
+         x64\Debug\EMeshRes.obj
+         x64\Debug\EResBase.obj
+         x64\Debug\EResLoaders.obj
+         x64\Debug\EResMgr.obj
          x64\Debug\app.obj
          x64\Debug\NTGameMain.obj
          x64\Debug\pch.obj
@@ -20,4 +33,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.62
+Time Elapsed 00:00:14.80

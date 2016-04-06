@@ -16,13 +16,25 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)EObjResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ERender.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\ECamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ERender\EFbxObj.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\EMaterial.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\EMesh.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ESubStr.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\DDSLoader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\EMeshRes.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\EResBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\EResLoaders.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\EResMgr.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)app.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)app.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)EObjResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ERender.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\ECamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ERender\EFbxObj.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\EMaterial.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\EMesh.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\ERenderStruct.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ESubStr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)NTGameMain.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)NTGameMain.cpp" />
@@ -38,6 +50,14 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Content\Sample3DSceneRenderer.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Content\SampleFpsTextRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Content\Sample3DSceneRenderer.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\DDSLoader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EMeshRes.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EResBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EResLoaders.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EResMgr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EResType.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Tools\EMemHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Tools\EPahtHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="$(MSBuildThisFileDirectory)Content\SamplePixelShader.hlsl">

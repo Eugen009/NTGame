@@ -12,15 +12,15 @@ namespace EResource{
 	class ESubStr{
 	public:
 		ESubStr(){ 
-			m_pStr = nullptr;
+			//m_pStr = nullptr;
 			startPos = 0;
 			endPos = 0;
 			m_pStart = NULL;
 		}
-		ESubStr(String^ pstr, unsigned start=0){ 
-			if (pstr != nullptr && start < (int)pstr->Length()){
-				m_pStr = pstr; startPos = start; endPos = pstr->Length();
-				m_pStart = m_pStr->Begin() + startPos;
+		ESubStr(std::shared_ptr<std::wstring> pstr, size_t start=0){ 
+			if (pstr != nullptr && start < (int)pstr->size()){
+				m_pStr = pstr; startPos = start; endPos = pstr->size();
+				m_pStart = m_pStr->data() + startPos;
 			} else{
 				m_pStr = nullptr;
 				startPos = 0;
@@ -30,7 +30,7 @@ namespace EResource{
 		}
 		inline unsigned getLen() const{ return endPos - startPos; }
 		inline const wchar_t* begin() const{ return m_pStart; }
-		inline const wchar_t* end() const{ return m_pStr->Begin() + endPos; }
+		inline const wchar_t* end() const{ return m_pStr->data() + endPos; }
 		inline const unsigned getStartPos() const{ return startPos; }
 		inline const unsigned getEndPos() const { return endPos; }
 		inline bool empty() const{ return endPos == startPos; }
@@ -63,7 +63,7 @@ namespace EResource{
 		}
 		wchar_t operator[](unsigned index) const{
 			assert(index < getLen() && index >= 0);
-			return m_pStr->Data()[startPos + index];
+			return m_pStr->at(startPos + index);
 		}
 		inline unsigned findFirstNotOf(const wchar_t* notOfLetters, unsigned startOffset = 0) const{
 			assert(m_pStr != nullptr);
@@ -126,7 +126,7 @@ namespace EResource{
 				return len;
 			return len - index;
 		}
-		ESubStr getLine(unsigned offset = 0) const{
+		ESubStr getLine(size_t offset = 0) const{
 			if (offset >= getLen()) return ESubStr();
 			ESubStr line( m_pStr, startPos + offset );
 			const wchar_t* endLetters = L"\r\n";
@@ -134,7 +134,7 @@ namespace EResource{
 			line.endPos += startPos;
 			return line;
 		}
-		ESubStr getWord(int offset = 0) const{
+		ESubStr getWord(size_t offset = 0) const{
 			const wchar_t* cur = begin() + offset;
 			const wchar_t* end = this ->end();
 			ESubStr word( m_pStr, offset + startPos );
@@ -149,7 +149,7 @@ namespace EResource{
 			}
 			return word;
 		}
-		ESubStr subStr(unsigned from, unsigned len = 0 ) const{
+		ESubStr subStr(size_t from, size_t len = 0 ) const{
 			//next.m_pStr = m_pStr;
 			unsigned curLen = getLen();
 			if (from > curLen) from = curLen;
@@ -208,10 +208,10 @@ namespace EResource{
 		
 
 	protected:
-		String^ m_pStr;
+		std::shared_ptr<std::wstring> m_pStr;
 		const wchar_t* m_pStart;
-		unsigned startPos;
-		unsigned endPos;
+		size_t startPos;
+		size_t endPos;
 	};
 }
 

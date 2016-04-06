@@ -17,7 +17,7 @@ namespace NTGame
 		void CreateWindowSizeDependentResources();
 		virtual void ReleaseDeviceDependentResources();
 		void Update(DX::StepTimer const& timer);
-		void Render();
+		virtual void Render();
 		void StartTracking();
 		void TrackingUpdate(float positionX);
 		void StopTracking();
@@ -49,6 +49,10 @@ namespace NTGame
 		bool	m_tracking;
 
 		EResource::EObjResource* m_Res;
+
+
+		Microsoft::WRL::ComPtr<ID3D11ShaderResourceView> m_TexView;
+		Microsoft::WRL::ComPtr<ID3D11SamplerState> m_Sampler;
 
 	};
 }

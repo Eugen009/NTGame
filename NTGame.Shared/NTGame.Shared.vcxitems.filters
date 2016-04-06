@@ -19,17 +19,53 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Content\SampleFpsTextRenderer.h">
       <Filter>Content</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)EObjResource.h">
-      <Filter>Content</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ESubStr.h">
       <Filter>Content</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ERender.h">
       <Filter>Content</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\EFbxObj.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\DDSLoader.h">
       <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EResMgr.h">
+      <Filter>Content\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\EMesh.h">
+      <Filter>Content\ERender</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\EMaterial.h">
+      <Filter>Content\ERender</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EResBase.h">
+      <Filter>Content\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\EFbxObj.h">
+      <Filter>Content\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)EObjResource.h">
+      <Filter>Content\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EResType.h">
+      <Filter>Content\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EMeshRes.h">
+      <Filter>Content\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\ERenderStruct.h">
+      <Filter>Content\ERender</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Tools\EPahtHelper.h">
+      <Filter>Content\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Tools\EMemHelper.h">
+      <Filter>Content\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource\EResLoaders.h">
+      <Filter>Content\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ERender\ECamera.h">
+      <Filter>Content\ERender</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -45,17 +81,41 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Content\SampleFpsTextRenderer.cpp">
       <Filter>Content</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)EObjResource.cpp">
-      <Filter>Content</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ESubStr.cpp">
       <Filter>Content</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ERender.cpp">
       <Filter>Content</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\EFbxObj.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\DDSLoader.cpp">
       <Filter>Content</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\EResMgr.cpp">
+      <Filter>Content\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\EMaterial.cpp">
+      <Filter>Content\ERender</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\EMesh.cpp">
+      <Filter>Content\ERender</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\EResBase.cpp">
+      <Filter>Content\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\EFbxObj.cpp">
+      <Filter>Content\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)EObjResource.cpp">
+      <Filter>Content\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\EMeshRes.cpp">
+      <Filter>Content\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource\EResLoaders.cpp">
+      <Filter>Content\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ERender\ECamera.cpp">
+      <Filter>Content\ERender</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +132,15 @@
     </Filter>
     <Filter Include="Content">
       <UniqueIdentifier>{811bcdd9-591e-4387-922a-89b2a2cf9bb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content\Resource">
+      <UniqueIdentifier>{41876fb1-4b01-4434-86a8-380e209b2385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content\Tools">
+      <UniqueIdentifier>{1fdf6636-806c-4f01-96e1-4f19ac848218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content\ERender">
+      <UniqueIdentifier>{e38eaabc-5c2e-4c8e-b596-6944ea051689}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
